@@ -29,10 +29,10 @@ app.post('/upload', function(req, res) {
 
     uploadPath = '/data/' + firmware.name;
 
-    if (firmware.mimetype != 'text/x-hex') {
-        console.error('Incorrect file type ', firmware.mimetype);
-        return;
-    }
+    // if (firmware.mimetype != 'text/x-hex') {
+    //     console.error('Incorrect file type ', firmware.mimetype);
+    //     return;
+    // }
 
     firmware.mv(uploadPath, function(err) {
         if (err) {
