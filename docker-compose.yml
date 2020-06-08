@@ -1,0 +1,40 @@
+version: '2'
+volumes:
+    resin-data:
+services:
+  openocd:
+    build: ./openocd
+    restart: no
+    volumes:
+      - 'resin-data:/data'
+    privileged: true
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
+  flush:
+    build: ./flush
+    restart: no
+    volumes:
+      - 'resin-data:/data'
+    privileged: true
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
+  webserver:
+    build: ./webserver
+    restart: no
+    privileged: true
+    volumes:
+      - 'resin-data:/data'
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
+  firmata:
+    build: ./firmata-test
+    privileged: true
+    volumes:
+      - 'resin-data:/data'
+    network_mode: host

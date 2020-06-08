@@ -1,0 +1,31 @@
+FROM balenalib/fincm3-node:12-stretch-build as build
+
+# Install git to pull src for some npm packages
+RUN install_packages git
+
+COPY package.json package.json
+
+RUN npm install
+
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-node:12-stretch-run
+
+# use `install_packages` if you need to install dependencies,
+# for instance if you need git, just uncomment the line below.
+# RUN install_packages git
+
+# Defines our working directory in container
+WORKDIR /usr/src/app
+
+# Copies the package.json first for better cache on later pushes
+COPY package.json package.json
+
+COPY --from=build ./node_modules ./node_modules
+
+# This will copy all files in our root to the working  directory in the container
+COPY . ./
+
+# Enable udevd so that plugged dynamic hardware devices show up in our container.
+ENV UDEV=1
+
+# server.js will run when container starts up on the device
+CMD ["npm", "start"]

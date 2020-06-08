@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .btn-primary.balena-btn {
+            background-color: rgb(171, 71, 188);
+            border-color: rgb(171, 71, 188);
+        }
+        
+        .list-group-item.balena {
+            background-color: rgb(171, 71, 188);
+            border-color: rgb(171, 71, 188);
+        }
+        
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid h-100 bg-light text-dark">
+        <div class="row justify-content-center align-items-center">
+            <a href="https://www.balena.io/fin/">
+                <img class="mt-3" src="images/fin.svg">
+            </a>
+        </div>
+        <hr/>
+        <div class="row justify-content-center align-items-center">
+            <div class="col col-sm-6 col-md-10 col-lg-4 col-xl-3">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action balena text-light disabled" tabindex="-1" aria-disabled="true">Resources</a>
+                    <a href="https://www.balena.io/fin/1.1/docs/" class="list-group-item list-group-item-action">Documentation</a>
+                    <a href="https://www.balena.io/fin/1.1/docs/getting-started" class="list-group-item list-group-item-action">Getting Started</a>
+                    <a href="#" class="list-group-item list-group-item-action">Coprocessor Examples</a>
+                    <a href="https://github.com/balena-io/balena-fin-coprocessor-firmata" class="list-group-item list-group-item-action">Firmata</a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center h-50">
+            <div class="col col-sm-6 col-md-10 col-lg-4 col-xl-3">
+                <form ref='uploadForm' id='uploadForm' action='/upload' class="form-group" method='post' encType="multipart/form-data">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="firmware" class="custom-file-input" id="uploadInput" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="uploadForm" id="filename">Select Coprocessor Firmware (.hex only)</label>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary balena-btn" type="submit" form="uploadForm" id="button-addon2">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.querySelector('.custom-file-input').addEventListener('change', function(e) {
+            var fileName = document.getElementById("uploadInput").files[0].name;
+            var TextfileName = document.getElementById("filename");
+            TextfileName.innerText = fileName;
+        })
+    </script>
+</body>
+
+</html>
