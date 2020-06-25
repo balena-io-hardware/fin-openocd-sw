@@ -30,8 +30,8 @@ RUN mkdir -p /usr/src/app/openocd/local/share && \
     cp -R /usr/local/share/openocd /usr/src/app/openocd/local/share/ && \
     cp -R /usr/src/app/board/balena-fin /usr/src/app/openocd/local/share/openocd/scripts/board/ && \
     cp /usr/local/bin/openocd /usr/src/app/openocd/ && \
-    cp /usr/src/app/install.sh /usr/src/app/openocd/ && \
-    tar -czf /usr/src/app/openocd.tar.gz /usr/src/app/openocd
+    cp /usr/src/app/install.sh /usr/src/app/openocd/ && cd /usr/src/app/openocd \
+    tar -czf openocd.tar.gz ./*
 
 COPY ./start.sh ./
 
