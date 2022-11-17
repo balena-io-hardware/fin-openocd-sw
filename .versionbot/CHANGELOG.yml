@@ -1,0 +1,43 @@
+- commits:
+    - subject: Switch from balenaCI to flowzone
+      hash: 42928448c499bcceddab38ac8167f209f05dad5b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Heath Raftery (@hraftery) <heath.raftery@balena.io>
+        signed-off-by: Heath Raftery (@hraftery) <heath.raftery@balena.io>
+      author: Heath Raftery
+      nested: []
+  version: 0.2.1
+  title: ""
+  date: 2022-11-17T03:57:30.755Z
+- version: 0.2.0
+  date: 2021-08-10T18:08:59Z
+  commits:
+    - hash: 628aff30700f14dc22ed2b07f164efe5806e8fd8
+      author: Carlo Maria Curinga
+      footers:
+        change-type: minor
+        signed-off-by: Carlo Maria Curinga <carlo@balena.io>
+      subject: Update balena-fin-v1-0.cfg
+      body: null
+    - hash: 413372a2ba28bd19465fdb08075e9fec115e661b
+      author: Carlo Maria Curinga
+      subject: Update balena-fin-v1-0.cfg
+      body: null
+    - hash: 63c96c10f70fc614bee26ef1a3dbb255af6a9475
+      author: Carlo Maria Curinga
+      subject: Update balena-fin-v1-0.cfg
+      body: null
+    - hash: 392cf24d582aaaad8bde50588f3729dfc00c601b
+      author: Carlo Maria Curinga
+      footers:
+        change-type: minor
+        signed-off-by: Carlo Maria Curinga <carlo@balena.io>
+      subject: remove hardcoded verbose 3 parameter
+      body: null
+    - hash: ae4b8a7c51e6b3186965c863ac1c5ef1b1cf79d7
+      author: Carlo Maria Curinga
+      subject: Merge branch 'master' into remove-verbose
+      body: null
